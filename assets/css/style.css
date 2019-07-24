@@ -2,19 +2,19 @@
     box-sizing: border-box;
 }
 
-.jumbotron {
-    text-align: center;
-    background: #0061ff;
-    color: snow;
+body {
+    background-image: url(../images/train.jpg);
 }
 
+.jumbotron {
+    text-align: center;
+    
+}
 
 
 th {
    
     text-align: center;
-    
-   
 }
 
 .panel-title {
