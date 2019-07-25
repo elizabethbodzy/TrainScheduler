@@ -32,18 +32,19 @@ var firebaseConfig = {
     $("#frequncy").val("");
 });
   database.ref().on("child_added", function(snapshot){
-    //   console.log(snapshot.val());
-    var firstTrainTime = 0;
+      console.log(snapshot.val());
+    
 
-    var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").add(1, "day");
+    var firstTrainTimeConverted = moment(snapshot.val().firstTrain, "HH:mm");
         console.log(firstTrainTimeConverted);
     
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+    // console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
     var differenceTrainTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
     console.log("DIFFERENCE IN TRAIN TIME: " + differenceTrainTime);
 
+    var trainFrequency = snapshot.val().frequency;
     var remainderInTime = differenceTrainTime % trainFrequency;
     console.log(remainderInTime);
 
@@ -57,10 +58,11 @@ var firebaseConfig = {
     var tableRow = $("<tr>");
     var trainName = $("<td>" + snapshot.val().name + "</td>");
     var trainDestination = $("<td>" + snapshot.val().destination + "</td>");
-    var trainFrequency = $("<td>" + snapshot.val().frequency + "</td>");
-    
+    var trainFrequencyElement = $("<td>" + snapshot.val().frequency + "</td>");
+    var nextArrival = $("<td>" + nextTrainArriving.format("HH:mm") + "</td>");
+    var minutesAway = $("<td>" + minutesUntilNextTrain + "</td>");
 
-    tableRow.append(trainName, trainDestination, trainFrequency, nextTrainArriving, minutesUntilNextTrain);
+    tableRow.append(trainName, trainDestination, trainFrequencyElement, nextArrival, minutesAway);
     $(".table").append(tableRow);
 
     // Create Error Handling
