@@ -1,21 +1,21 @@
 # Train Scheduler
 
 # Description 
-Welcome to R U 420? Our group includes Elizabeth, Stephen, Josh and Michael. Our project will involve the Faceplusplus Api as a way for a user to first be allowed access into our website. Faceplusplus will determine if your age is over 21. If yes, you will be directed into the website. If no, nothing will happen. The website will incorporate the Strain Api to retrieve strains, races, flavors and effects. The user will be allowed to click on a particular flavor, race or strain in order to generate a result of 3 gifs in relation to the effect/feeling of the strain.
+Train Scheduler is a platform that incorporates Firebase to host arrival and departure data. Train Scheduler will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
 # Screenshots/Live Recording
-
-![](/assets/images/homepage.png)
-![](/assets/images/inner-page.png)
-![](/assets/images/effects-page.png)
-![](/assets/images/recording.gif)
+![](/assets/images/home.png)
+![](/assets/images/train-scheduler.gif)
 
 
-# APIs Used
-* Faceplusplus
-* Strain Api
-* Giphy Api
-* FOAAS 
+# Built With
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap Framework
+* jQuery
+* Firebase Database
+* Moment.js
 
 # Demo Link
-https://elizabethbodzy.github.io/RU420/
+https://elizabethbodzy.github.io/TrainScheduler/
